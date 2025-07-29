@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "ConsoleTables/2.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Wcwidth": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/ConsoleTables.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ConsoleTables.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -14,10 +30,38 @@
             "related": ".xml"
           }
         }
+      },
+      "Wcwidth/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Wcwidth.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Wcwidth.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "ConsoleTables/2.7.0": {
+      "sha512": "6l6Si/7lMaXYHiIERdqdEMIiTjvCF29fObjAmTahsTpjSaMBUv1TMm7qmrOHL32Le3ipFqhph5sm8WOJjZG9Og==",
+      "type": "package",
+      "path": "consoletables/2.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.md",
+        "consoletables.2.7.0.nupkg.sha512",
+        "consoletables.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/ConsoleTables.dll",
+        "lib/netstandard2.1/ConsoleTables.pdb"
+      ]
+    },
     "Portable.BouncyCastle/1.9.0": {
       "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
       "type": "package",
@@ -32,10 +76,26 @@
         "portable.bouncycastle.1.9.0.nupkg.sha512",
         "portable.bouncycastle.nuspec"
       ]
+    },
+    "Wcwidth/1.0.0": {
+      "sha512": "aekut5BeF4c1Jr2qab3aXcttcgPEfPb2ok2L8911EIzn3RnDBYnUWgx/1OVlqrSXCdwAkBpNgYWXb6b5t4cBng==",
+      "type": "package",
+      "path": "wcwidth/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Wcwidth.dll",
+        "lib/net6.0/Wcwidth.xml",
+        "lib/netstandard2.0/Wcwidth.dll",
+        "lib/netstandard2.0/Wcwidth.xml",
+        "wcwidth.1.0.0.nupkg.sha512",
+        "wcwidth.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ConsoleTables >= 2.7.0",
       "Portable.BouncyCastle >= 1.9.0"
     ]
   },
@@ -89,6 +149,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "ConsoleTables": {
+            "target": "Package",
+            "version": "[2.7.0, )"
+          },
           "Portable.BouncyCastle": {
             "target": "Package",
             "version": "[1.9.0, )"
