@@ -33,15 +33,7 @@ namespace DiceGame
 
         private int GenerateSecureNumber(int range)
         {
-            byte[] buffer = new byte[4];
-            int value;
-            do
-            {
-                RandomNumberGenerator.Fill(buffer);
-                value = BitConverter.ToInt32(buffer, 0) & int.MaxValue;
-            } while (value >= range * (int.MaxValue / range));
-
-            return value % range;
+            return RandomNumberGenerator.GetInt32(0, range);
         }
 
         public static string ComputeHmacSha3(byte[] key, int value)
